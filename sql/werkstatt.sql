@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2020 at 02:59 PM
+-- Generation Time: May 05, 2020 at 04:04 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `auftraege`
+-- Table structure for table `tasks`
 --
 
-CREATE TABLE `auftraege` (
+CREATE TABLE `tasks` (
   `id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
@@ -409,9 +409,9 @@ INSERT INTO `urgency` (`id`, `name`) VALUES
 --
 
 --
--- Indexes for table `auftraege`
+-- Indexes for table `tasks`
 --
-ALTER TABLE `auftraege`
+ALTER TABLE `tasks`
   ADD PRIMARY KEY (`id`),
   ADD KEY `urgency` (`urgency`),
   ADD KEY `tool` (`tool`);
@@ -434,9 +434,9 @@ ALTER TABLE `urgency`
 --
 
 --
--- AUTO_INCREMENT for table `auftraege`
+-- AUTO_INCREMENT for table `tasks`
 --
-ALTER TABLE `auftraege`
+ALTER TABLE `tasks`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -456,11 +456,11 @@ ALTER TABLE `urgency`
 --
 
 --
--- Constraints for table `auftraege`
+-- Constraints for table `tasks`
 --
-ALTER TABLE `auftraege`
-  ADD CONSTRAINT `auftraege_ibfk_1` FOREIGN KEY (`urgency`) REFERENCES `urgency` (`id`),
-  ADD CONSTRAINT `auftraege_ibfk_2` FOREIGN KEY (`tool`) REFERENCES `tools` (`id`);
+ALTER TABLE `tasks`
+  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`urgency`) REFERENCES `urgency` (`id`),
+  ADD CONSTRAINT `tasks_ibfk_2` FOREIGN KEY (`tool`) REFERENCES `tools` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
