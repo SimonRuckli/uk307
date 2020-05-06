@@ -1,36 +1,44 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <meta charset="UTF-8">
-        <title>Auftrag bearbeiten</title>
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="public/css/app.css">
-    </head>
-    <body>
-        <h1>Auftrag bearbeiten</h1><br><br>
-        <form action="validation" method="post" id="task">
-            
-            <lable for="name">Name*</lable>
-            <input name="name" type="text" id="name" require><br><br>
 
-            <lable for="email">E-Mail*</lable>
-            <input name="email" type="email" id="email" require><br><br>
+<head>
+    <meta charset="UTF-8">
+    <title>Auftrag bearbeiten</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="public/css/css.css" rel="stylesheet">
+</head>
 
-            <lable for="phone">Telefon</lable>
-            <input name="phone" type="text" id="phone"><br><br>
+<body>
+    <div class="wrapper">
 
-            <lable>Status der Reparatur</lable>
-            <select name="urgency" require>
-                <option value=""></option>
-                <option value="in_progress">Reparaturauftrag pendent</option>
-                <option value="finished">Reparaturauftrag abgeschlossen</option>
-            </select><br><br>
+        <h4>Neuer Reparaturauftrag</h4>
 
-            <lable for="tool">Betreffendes Werkzeug*</lable>
-            <input name="tool" type="text" id="tool" require><br><br>
-            
-            <input type="button" value="Auftrag abbrechen">
-            <input type="submit" value="Auftrag speichern">
+        <form action="processtask" method="post">
+            <div class="form-group">
+                <label class="form-label" for="name">Name*</label>
+                <input class="form-control" type="text" name="name">
+                <br>
+                <label class="form-label" for="email">E-Mail*</label>
+                <input class="form-control" type="text" name="email">
+                <br>
+                <label class="form-label" for="phone">Telefon</label>
+                <input class="form-control" type="text" name="phone">
+                <br>
+                <lable>Status der Reparatur</lable>
+                <select class="form-control" name="urgency" require>
+                    <option value=""></option>
+                    <option value="in_progress">Reparaturauftrag pendent</option>
+                    <option value="finished">Reparaturauftrag abgeschlossen</option>
+                </select>
+                <br>
+                <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
+                <input class="form-control" type="text" name="tool">
+            </div>
+            <div class="form-actions">
+                <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag Hinzufügen</button>
+                <button class="btn btn-secondary" type="submit" name="button" value="tasklist">Auftragsliste Öffnen</button>
+            </div>
         </form>
-    </body>
+    </div>
+</body>
 </html>

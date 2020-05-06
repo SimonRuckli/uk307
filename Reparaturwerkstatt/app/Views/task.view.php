@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <title>Auftrag erfassen</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="public/css/app.css" rel="stylesheet">
-    <script scr="public/js/app.js"></script>
+    <link href="public/css/css.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,7 +25,15 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <input class="form-control" type="text" id="urgency" name="urgency">
+                <select class="form-control" name="urgency" value=default require>
+                    <option disabled selected value> -- select an option -- </option>
+                    <option value="very_deep">sehr tief</option>
+                    <option value="deep">tief</option>
+                    <option value="normal">normal</option>
+                    <option value="high">hoch</option>
+                    <option value="very high">sehr hoch</option>
+                </select><br>
+                <input class="form-control" type="text" name="urgencydays" readonly>
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <input class="form-control" type="text" name="tool">
