@@ -25,11 +25,11 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <lable>Status der Reparatur</lable>
-                <select name="urgency" require>
+                <select class="form-control" name="urgency" require>
                     <option value=""></option>
                     <option value="in_progress">Reparaturauftrag pendent</option>
                     <option value="finished">Reparaturauftrag abgeschlossen</option>
-                </select><br><br>
+                </select>
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <input class="form-control" type="text" name="tool">
