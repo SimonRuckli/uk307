@@ -51,7 +51,7 @@ class Task
     {
         $statement = $this->db->prepare("SELECT name as tool FROM tools");
         $statement->execute();
-        return $statement->fetchAll();
+        return $statement->fetchAll(PDO::FETCH_COLUMN);
     }
 
     public function addToDatabase()
