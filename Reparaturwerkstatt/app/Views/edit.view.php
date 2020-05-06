@@ -40,5 +40,6 @@
             </div>
         </form>
     </div>
+    <link src="public/js/test.js">
 </body>
 </html>
