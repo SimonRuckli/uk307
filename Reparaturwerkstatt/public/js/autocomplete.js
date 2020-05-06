@@ -76,10 +76,4 @@ function autocomplete(inp, arr) {
   document.addEventListener("click", function (e) {
     closeAllLists(e.target);
   });
-  }
-
-
-var btn = document.getElementById("add");
-btn.addEventListener("click", function () {
-    
-});
+}

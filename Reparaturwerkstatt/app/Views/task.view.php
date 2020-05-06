@@ -68,5 +68,4 @@
     </script>
     <script src="public/js/addTask.js"></script>
 </body>
-
 </html>

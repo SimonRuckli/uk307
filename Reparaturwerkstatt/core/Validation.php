@@ -22,7 +22,7 @@ class Validation
 
     public function validatePhone($phone)
     {
-        if(!preg_match("/^[0-9 .\-]+$/i", trim($phone)))
+        if(!preg_match("/^[0-9 + .\-]+$/i", trim($phone)))
         {
             array_push($this->errors,"Telefonnummer ist nicht gültig.\n");
         }
@@ -58,9 +58,9 @@ class Validation
             }
         }
 
-        if(count($tools) - 1 === $count)
+        if(count($tools) == $count)
         {
-            $errors[] = "{$selectedTool} ist nicht gültig.\n";
+            array_push($this->errors,"Werkzeug gibt es nicht.\n");
         }
     }
 
