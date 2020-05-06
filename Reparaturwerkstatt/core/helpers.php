@@ -7,8 +7,7 @@
  *
  * @return string
  */
-function e(string $value): string
-{
+function e(string $value): string {
     return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false);
 }
 
@@ -20,7 +19,10 @@ function e(string $value): string
  *
  * @return mixed
  */
-function post(string $key, $default = '')
-{
+function post(string $key, $default = '') {
     return $_POST[$key] ?? $default;
+}
+
+function get(string $key, $default = "") {
+    return $_GET[$key] ?? $default;
 }
