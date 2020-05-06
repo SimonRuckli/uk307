@@ -1,14 +1,21 @@
 <?php
 
+$dto = new Task();
+$tools = $dto->getallTools();
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if ($_POST["button"] == "add") {
 
-        validateName();
-        if(count(Validation::$errors) === 0)
-        {
-            // Formularfelder auslesen
-            $dto = array (
+        $validation = new Validation();
+        $validation->validateName(post("name"));
+        $validation->validateEmail(post("email"));
+        $validation->validatePhone(post("phone"));
+        $validation->validateUrgency(post("urgency"));
+        $validation->validateTool(post("tool"), $tools);
+
+        if ($validation->hasNoErrors()) {
+            $dto = array(
                 "name"    => post("name"),
                 "email"   => post("email"),
                 "phone"   => post("phone"),
@@ -16,13 +23,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 "urgency" => post("urgency"),
                 "tool"    => post("tool")
             );
-        
-            // Datenbank-Objekt erstellen
+
             $task = new Task($dto);
             $task->addToDatabase();
-        }
 
-        header("Location: addtask");
+            header("Location: addtask");
+        } else {
+            require "app/Views/task.view.php";
+        }
     } elseif ($_POST["button"]  == "tasklist") {
         header("Location: tasklist");
     }
