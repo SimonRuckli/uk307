@@ -11,18 +11,33 @@
 <body>
     <div class="wrapper">
         <h4>Task-Liste</h4>
-        <ul>
+        <table style="width:100%">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Dringlichkeit</th>
+                <th>Werkzeug</th>
+                <th>Bearbeiten</th>
+            </tr>
             <?php foreach ($tasks as $task) : ?>
-                <li>
-                    <?= $task["name"] ?? "" ?> | <?= $task["email"] ?? "" ?> | <?= $task["phone"] ?? "" ?> | <?= $task["urgency"] ?? "" ?> | <?= $task["tool"] ?? "" ?>
-                </li>
+                <tr>
+                    <td><?= $task["name"]    ?? "" ?></td>
+                    <td><?= $task["email"]   ?? "" ?></td>
+                    <td><?= $task["phone"]   ?? "" ?></td>
+                    <td><?= $task["urgency"] ?? "" ?></td>
+                    <td><?= $task["tool"]    ?? "" ?></td>
+                    <td><button type="submit" name="button" value="add">⚙️</button></td>
+                </tr>
             <?php endforeach; ?>
-        </ul>
-    </div>
+        </table>
 
-    <div class="form-actions">
-        <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag Bearbeiten</button>
-        <button class="btn btn-secondary" type="cancel" name="button" value="tasklist">Abbrechen</button>
+        <div class="form-actions">
+            <br>
+            <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag Bearbeiten</button>
+            <button class="btn btn-secondary" type="cancel" name="button" value="tasklist">Abbrechen</button>
+        </div>
+        
     </div>
 </body>
 
