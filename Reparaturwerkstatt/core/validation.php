@@ -1,10 +1,10 @@
 <?php
 
-static class Validation
+class Validation
 {
-    public static $errors[];
+    static public $errors;
 
-    public function validateName($name)
+    public static function validateName($name)
     {
         if(!preg_match('/.[a-zA-Z]/', trim($name)))
         {
@@ -12,7 +12,7 @@ static class Validation
         }
     }
 
-    public function validateEmail($email)
+    public static function validateEmail($email)
     {
         if (filter_var(trim($email), FILTER_VALIDATE_EMAIL) == false)
         {
@@ -20,7 +20,7 @@ static class Validation
         }
     }
 
-    public function validatePhone($phone)
+    public static function validatePhone($phone)
     {
         if(!preg_match('/^-[0-9]{10}+$/', trim($phone)))
         {
@@ -28,7 +28,7 @@ static class Validation
         }
     }
 
-    public function validateUrgency($urgency)
+    public static function validateUrgency($urgency)
     {
         if($urgency == " -- Bitte auswählen -- ")
         {
@@ -36,7 +36,7 @@ static class Validation
         }
     }
 
-    public function validateTool()
+    public static function validateTool($tools)
     {
 
     }
