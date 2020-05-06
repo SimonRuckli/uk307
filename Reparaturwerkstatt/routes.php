@@ -7,5 +7,5 @@ $router->define([
     "addtask" => "app/Controllers/TaskController.php",
     "processtask" => "app/Controllers/ProcessTaskController.php",
     "tasklist" => "app/Controllers/TaskListController.php",
-    "edit" => "app/Controllers/editController.php",
+    "edit" => "app/Controllers/EditTaskController.php",
 ]);

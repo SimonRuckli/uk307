@@ -5,7 +5,8 @@ class Task
     public $dto;
     public PDO $db;
 
-    public function __construct($dto = null) {
+    public function __construct($dto = null)
+    {
         $this->dto = $dto;
         $this->db = connectToDatabase();
     }
@@ -21,7 +22,8 @@ class Task
         T2.name as tool 
         FROM tasks T0 
         INNER JOIN urgency T1 ON T0.urgency = T1.id 
-        INNER JOIN tools T2 ON T0.tool = T2.id");
+        INNER JOIN tools T2 ON T0.tool = T2.id
+        WHERE processing IS TRUE");
 
         $statement->execute();
         return $statement->fetchAll();
@@ -41,7 +43,7 @@ class Task
         INNER JOIN urgency T1 ON T0.urgency = T1.id 
         INNER JOIN tools T2 ON T0.tool = T2.id
         WHERE T0.id = :id");
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement->bindParam(":id", $id, PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();
@@ -56,24 +58,25 @@ class Task
 
     public function addToDatabase()
     {
-        $statement = $this->db->prepare("INSERT INTO tasks (name, email, phone, urgency, tool) 
-        VALUES (:name, :email, :phone, (SELECT id FROM urgency WHERE name LIKE :urgency), (SELECT id FROM tools WHERE name LIKE :tool))");
+        $statement = $this->db->prepare("INSERT INTO tasks (name, email, phone, daysUntilReturn, urgency, tool) 
+        VALUES (:name, :email, :phone, :daysUntilReturn, (SELECT id FROM urgency WHERE name LIKE :urgency), (SELECT id FROM tools WHERE name LIKE :tool))");
 
-        $statement->bindParam(':name', $this->dto["name"]);
-        $statement->bindParam(':email', $this->dto["email"]);
-        $statement->bindParam(':phone', $this->dto["phone"]);
-        $statement->bindParam(':urgency', $this->dto["urgency"]);
-        $statement->bindParam(':tool', $this->dto["tool"]);
+        $statement->bindParam(":name", $this->dto["name"]);
+        $statement->bindParam(":email", $this->dto["email"]);
+        $statement->bindParam(":phone", $this->dto["phone"]);
+        $statement->bindParam(":daysUntilReturn", $this->dto["daysUntilReturn"]);
+        $statement->bindParam(":urgency", $this->dto["urgency"]);
+        $statement->bindParam(":tool", $this->dto["tool"]);
 
         return $statement->execute();
     }
 
     public function update(int $id)
     {
-        $statement = $this->db->prepare('UPDATE tasks SET title = :title, completed = :completed WHERE id = :id');
-        $statement->bindParam(':title', $this->title, PDO::PARAM_STR);
-        $statement->bindParam(':completed', $this->completed, PDO::PARAM_BOOL);
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement = $this->db->prepare("UPDATE tasks SET title = :title, completed = :completed WHERE id = :id");
+        $statement->bindParam(":title", $this->title, PDO::PARAM_STR);
+        $statement->bindParam(":completed", $this->completed, PDO::PARAM_BOOL);
+        $statement->bindParam(":id", $id, PDO::PARAM_INT);
 
         return $statement->execute();
     }
@@ -81,8 +84,8 @@ class Task
     // Lösche Task
     public function delete(int $id)
     {
-        $statement = $this->db->prepare('DELETE FROM tasks WHERE id = :id');
-        $statement->bindParam(':id', $id, PDO::PARAM_INT);
+        $statement = $this->db->prepare("DELETE FROM tasks WHERE id = :id");
+        $statement->bindParam(":id", $id, PDO::PARAM_INT);
 
         return $statement->execute();
     }
