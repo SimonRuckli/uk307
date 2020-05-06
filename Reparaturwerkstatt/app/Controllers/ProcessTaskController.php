@@ -17,7 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $task = new Task($dto);
         $task->addToDatabase();
 
-        header("Location: app/Controllers/TaskController.php");
+
+        header("Location: addtask");
     } elseif ($_POST["button"]  == "tasklist") {
         header("Location: tasklist");
     }
