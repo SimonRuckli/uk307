@@ -47,7 +47,7 @@ class Validation
             }
         }
 
-        if(count($tools) - 1 == $count)
+        if(count($tools) == $count)
         {
             array_push($this->errors,"Werkzeug gibt es nicht.\n");
         }
