@@ -36,13 +36,15 @@
                 <input class="form-control" type="text" name="urgencydays" id="urgencydays" readonly>
                 <br>
 
+                <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
+                <br>
                 <div class="autocomplete">
                     <input class="form-control" id="tool" type="text" name="tool">
                 </div>
             </div>
 
             <div class="form-actions">
-                <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag speichern</button>
+                <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag hinzufügen</button>
                 <button class="btn btn-secondary" type="submit" name="button" value="tasklist">Auftragsliste öffnen</button>
             </div>
         </form>
