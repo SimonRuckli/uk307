@@ -21,7 +21,7 @@
 
         <h4>Neuer Reparaturauftrag</h4>
 
-        <form action="processtask" method="post">
+        <form autocomplete="off" action="processtask" method="post">
 
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
