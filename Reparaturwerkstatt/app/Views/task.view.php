@@ -65,8 +65,17 @@
     </script>
     <script>
         autocomplete(document.getElementById("tool"), tools);
+
+        var ac = document.getElementById("add");
+        ac.addEventListener("onfocusout", function () {
+            var selectedTool = document.getElementById("tool").value;
+            if(tools.includes(selectedTool)) {
+                console.log(1234567890);
+            } else {
+                window.alert("Test");
+            }
+        });
     </script>
     <script src="public/js/app.js"></script>
 </body>
-
 </html>
