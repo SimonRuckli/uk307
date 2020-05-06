@@ -14,8 +14,7 @@
         <ul>
             <?php foreach ($tasks as $task) : ?>
                 <li>
-                    [<?= $task["name"] ?? "" ?>]    [<?= $task["email"] ?? "" ?>]    [<?= $task["phone"] ?? "" ?>]   [<?= $task["urgency"] ?? "" ?>
-                    ]   [<?= $task["tool"] ?? "" ?>]
+                    <?= $task["name"] ?? "" ?> | <?= $task["email"] ?? "" ?> | <?= $task["phone"] ?? "" ?> | <?= $task["urgency"] ?? "" ?> | <?= $task["tool"] ?? "" ?>
                 </li>
             <?php endforeach; ?>
         </ul>
