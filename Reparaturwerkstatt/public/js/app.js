@@ -21,5 +21,3 @@ comboBox.addEventListener("change", function () {
             break;
     }
 });
-
-alert("Werkzeug: " + tools[3]);

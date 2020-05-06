@@ -31,8 +31,11 @@
                     <option>Reparaturauftrag abgeschlossen</option>
                 </select>
                 <br>
-                <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
-                <input class="form-control" type="text" name="tool">
+
+                <!--<label class="form-label" for="tool">Betreffendes Werkzeug*</label>-->
+                <div class="autocomplete">
+                    <input class="form-control" id="tool" type="text" name="tool">
+                </div>
             </div>
             <div class="form-actions">
                 <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag speichern</button>
@@ -40,6 +43,13 @@
             </div>
         </form>
     </div>
-    <link src="public/js/test.js">
+
+    <script src="public/js/autocomplete.js"></script>
+    <script type="text/javascript">
+        var tools = <?php echo json_encode($tools); ?>;
+    </script>
+    <script>
+        autocomplete(document.getElementById("tool"), tools);
+    </script>
 </body>
 </html>

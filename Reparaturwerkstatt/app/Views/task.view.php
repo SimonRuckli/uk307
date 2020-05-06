@@ -13,7 +13,7 @@
 
         <h4>Neuer Reparaturauftrag</h4>
 
-        <form action="processtask" method="post">
+        <form autocomplete="off" action="processtask" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
                 <input class="form-control" type="text" name="name">
@@ -35,8 +35,10 @@
                 </select><br>
                 <input class="form-control" type="text" name="urgencydays" id="urgencydays" readonly>
                 <br>
-                <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
-                <input class="form-control" type="text" name="tool">
+
+                <div class="autocomplete">
+                    <input class="form-control" id="tool" type="text" name="tool">
+                </div>
             </div>
 
             <div class="form-actions">
@@ -46,8 +48,12 @@
         </form>
     </div>
 
+    <script src="public/js/autocomplete.js"></script>
     <script type="text/javascript">
         var tools = <?php echo json_encode($tools); ?>;
+    </script>
+    <script>
+        autocomplete(document.getElementById("tool"), tools);
     </script>
     <script src="public/js/app.js"></script>
 </body>
