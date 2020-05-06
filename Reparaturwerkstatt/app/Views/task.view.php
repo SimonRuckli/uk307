@@ -41,7 +41,7 @@
 
             <div class="form-actions">
                 <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag speichern</button>
-                <button class="btn btn-secondary" type="submit" name="button" value="tasklist">Reparaturauftrag abbrechen</button>
+                <button class="btn btn-secondary" type="submit" name="button" value="tasklist">Auftragsliste öffnen</button>
             </div>
         </form>
     </div>

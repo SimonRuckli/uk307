@@ -9,6 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "name"    => post("name"),
             "email"   => post("email"),
             "phone"   => post("phone"),
+            "daysUntilReturn" => filter_var(post("urgencydays"), FILTER_SANITIZE_NUMBER_INT),
             "urgency" => post("urgency"),
             "tool"    => post("tool")
         );

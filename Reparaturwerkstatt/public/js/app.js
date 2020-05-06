@@ -22,4 +22,6 @@ comboBox.addEventListener("change", function () {
     }
 });
 
-alert("Werkzeug: " + tools[3]);
+tools.forEach(function(element, index) {
+    console.log(index, element);
+});
