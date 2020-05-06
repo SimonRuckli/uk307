@@ -25,8 +25,8 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <select class="form-control" name="urgency" value=default require>
-                    <option disabled selected value> -- select an option -- </option>
+                <select class="form-control" name="urgency" require>
+                    <option hidden disabled selected value> -- select an option -- </option>
                     <option value="very_deep">sehr tief</option>
                     <option value="deep">tief</option>
                     <option value="normal">normal</option>
