@@ -26,9 +26,9 @@
                 <br>
                 <lable>Status der Reparatur</lable>
                 <select class="form-control" name="urgency" require>
-                    <option hidden disabled selected value> -- select an option -- </option>
-                    <option value="in_progress">Reparaturauftrag pendent</option>
-                    <option value="finished">Reparaturauftrag abgeschlossen</option>
+                    <option hidden disabled selected value> -- Bitte auswählen -- </option>
+                    <option>Reparaturauftrag pendent</option>
+                    <option>Reparaturauftrag abgeschlossen</option>
                 </select>
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
