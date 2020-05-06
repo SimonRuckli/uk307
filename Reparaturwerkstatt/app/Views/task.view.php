@@ -34,8 +34,8 @@
                 <input class="form-control" type="text" name="phone" value="<?php echo(post("phone"));?>">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <select class="form-control" name="urgency" id="urgency" require value="<?php echo(post("urgency"));?>" >
-                    <option hidden disabled selected value> -- Bitte auswählen -- </option>
+                <select class="form-control" name="urgency" id="urgency"  require >
+                    <option hidden disabled selected value><?php echo(post("urgency", " -- Bitte auswählen -- "));?></option>
                     <option>sehr tief</option>
                     <option>tief</option>
                     <option>normal</option>
@@ -66,7 +66,7 @@
     <script>
         autocomplete(document.getElementById("tool"), tools);
     </script>
-    <script src="public/js/app.js"></script>
+    <script src="public/js/addTask.js"></script>
 </body>
 
 </html>

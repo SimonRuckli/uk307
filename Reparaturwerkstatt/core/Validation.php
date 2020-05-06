@@ -27,7 +27,7 @@ class Validation
             array_push($this->errors,"Telefonnummer ist nicht gültig.\n");
         }
     }
-
+    
     public function validateUrgency($urgency)
     {
         if($urgency == "")
@@ -36,9 +36,20 @@ class Validation
         }
     }
 
-    public function validateTool($selectedTool, $tools)
+    public function validateProcessing($processing)
+    {
+        if($processing == "")
+        {
+            array_push($this->errors,"Status muss gewählt werden.\n");
+        }
+    }
+
+    public function validateTool($selectedTool)
     {
         $count = 0;
+        $pdo = new Task();
+        $tools = $pdo->getAllTools();
+
         foreach($tools as $tool)
         {
             if(strtoupper($tool) != strtoupper($selectedTool))
