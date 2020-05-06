@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Auftrag bearbeiten</title>
-        <link rel="stylesheet" href="public/css/css.css">
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="public/css/app.css">
     </head>
     <body>
-        <h1>Auftrag bearbeiten</h1>
+        <h1>Auftrag bearbeiten</h1><br><br>
         <form action="validation" method="post">
             
             <lable for="name">Name*</lable>
@@ -27,8 +28,9 @@
 
             <lable for="tool">Betreffendes Werkzeug*</lable>
             <input name="tool" type="text" id="tool" require><br><br>
-
-            <input type="submit" value="Anmelden">
+            
+            <input type="button" value="Auftrag abbrechen">
+            <input type="submit" value="Auftrag speichern">
         </form>
     </body>
 </html>
