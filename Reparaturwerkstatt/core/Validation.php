@@ -36,7 +36,7 @@ class Validation
         }
     }
 
-    public function validateTool($tool, $tools)
+    public function validateTool($selectedTool, $tools)
     {
         $count = 0;
         foreach($tools as $tool)
