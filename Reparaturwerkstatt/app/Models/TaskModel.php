@@ -47,6 +47,13 @@ class Task
         return $statement->fetch();
     }
 
+    public function getAllTools()
+    {
+        $statement = $this->db->prepare("SELECT name as tool FROM tools");
+        $statement->execute();
+        return $statement->fetchAll();
+    }
+
     public function addToDatabase()
     {
         $statement = $this->db->prepare("INSERT INTO tasks (name, email, phone, urgency, tool) 

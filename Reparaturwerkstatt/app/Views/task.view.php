@@ -16,7 +16,7 @@
         <form action="processtask" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name" id="test">
+                <input class="form-control" type="text" name="name">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
                 <input class="form-control" type="text" name="email">
