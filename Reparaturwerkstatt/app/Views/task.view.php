@@ -6,6 +6,7 @@
     <title>Auftrag erfassen</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
     <link href="public/css/app.css" rel="stylesheet">
+    <script scr="public/js/app.js"></script>
 </head>
 
 <body>
@@ -25,7 +26,7 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <input class="form-control" type="text" name="urgency">
+                <input class="form-control" type="text" id="urgency" name="urgency">
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <input class="form-control" type="text" name="tool">

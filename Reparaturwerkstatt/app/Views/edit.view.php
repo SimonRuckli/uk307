@@ -8,7 +8,7 @@
     </head>
     <body>
         <h1>Auftrag bearbeiten</h1><br><br>
-        <form action="validation" method="post">
+        <form action="validation" method="post" id="task">
             
             <lable for="name">Name*</lable>
             <input name="name" type="text" id="name" require><br><br>
