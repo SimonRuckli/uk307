@@ -16,7 +16,7 @@
         <form action="processtask" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name">
+                <input class="form-control" type="text" name="name" id="test">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
                 <input class="form-control" type="text" name="email">
@@ -25,7 +25,7 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <select class="form-control" name="urgency" require>
+                <select class="form-control" name="urgency" id="urgency" require>
                     <option hidden disabled selected value> -- Bitte auswählen -- </option>
                     <option>sehr tief</option>
                     <option>tief</option>
@@ -47,6 +47,7 @@
 
     </div>
 
+    <script src="public/js/app.js"></script>
 </body>
 
 </html>

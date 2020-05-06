@@ -1,10 +1,5 @@
 
-addEventListener("load", function() {
-
-    var txtBox = document.querySelector("#urgency");
-  
-    txtBox.addEventListener("click", function() {
-        console.log("test");
-    });
-
+var y = document.querySelector("#urgency");
+y.addEventListener("change", function () {
+    console.log(y.nodeValue);
 });

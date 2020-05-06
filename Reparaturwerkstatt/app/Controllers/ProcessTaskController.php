@@ -12,11 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             "urgency" => post("urgency"),
             "tool"    => post("tool")
         );
-
+      
         // Datenbank-Objekt erstellen
         $task = new Task($dto);
         $task->addToDatabase();
-
 
         header("Location: addtask");
     } elseif ($_POST["button"]  == "tasklist") {
