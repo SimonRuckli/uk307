@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         // Formularfelder auslesen
         $dto = array(
             "name"    => post("name"),
-            "email"    => post("email"),
+            "email"   => post("email"),
             "phone"   => post("phone"),
             "urgency" => post("urgency"),
             "tool"    => post("tool")
@@ -17,8 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $task = new Task($dto);
         $task->addToDatabase();
 
-        header("Location: http://localhost/Projekt/GitHub/Reparaturwerkstatt");
+        header("Location: app/Controllers/TaskController.php");
     } elseif ($_POST["button"]  == "tasklist") {
-        header("Location: http://localhost/Projekt/GitHub/Reparaturwerkstatt/tasklist");
+        header("Location: tasklist");
     }
 }

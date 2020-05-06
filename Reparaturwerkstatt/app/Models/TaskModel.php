@@ -12,16 +12,35 @@ class Task
 
     public function getAllEntries()
     {
-        $statement = $this->db->prepare('SELECT * FROM tasks');
-        $statement->execute();
+        $statement = $this->db->prepare(@"
+        SELECT 
+        T0.name as name, 
+        T0.email as email, 
+        T0.phone as phone, 
+        T1.name as urgency, 
+        T2.name as tool 
+        FROM tasks T0 
+        INNER JOIN urgency T1 ON T0.urgency = T1.id 
+        INNER JOIN tools T2 ON T0.tool = T2.id");
 
+        $statement->execute();
         return $statement->fetchAll();
     }
 
     // Element by ID
-    public function getById(int $id)
+    public function getEntryById(int $id)
     {
-        $statement = $this->db->prepare('SELECT * FROM tasks WHERE id = :id');
+        $statement = $this->db->prepare(@"
+        SELECT 
+        T0.name as name, 
+        T0.email as email, 
+        T0.phone as phone, 
+        T1.name as urgency, 
+        T2.name as tool 
+        FROM tasks T0 
+        INNER JOIN urgency T1 ON T0.urgency = T1.id 
+        INNER JOIN tools T2 ON T0.tool = T2.id
+        WHERE T0.id = :id");
         $statement->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->execute();
 
@@ -31,7 +50,7 @@ class Task
     public function addToDatabase()
     {
         $statement = $this->db->prepare("INSERT INTO tasks (name, email, phone, urgency, tool) 
-        VALUES (:name, :email, :phone, :urgency, :tool)");
+        VALUES (:name, :email, :phone, (SELECT id FROM urgency WHERE name LIKE :urgency), (SELECT id FROM tools WHERE name LIKE :tool))");
 
         $statement->bindParam(':name', $this->dto["name"]);
         $statement->bindParam(':email', $this->dto["email"]);

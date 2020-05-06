@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 05, 2020 at 05:03 PM
+-- Generation Time: May 06, 2020 at 09:00 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -413,8 +413,8 @@ INSERT INTO `urgency` (`id`, `name`) VALUES
 --
 ALTER TABLE `tasks`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `urgency` (`urgency`),
-  ADD KEY `tool` (`tool`);
+  ADD KEY `urgency` (`urgency`) USING BTREE,
+  ADD KEY `tool` (`tool`) USING BTREE;
 
 --
 -- Indexes for table `tools`
@@ -427,7 +427,8 @@ ALTER TABLE `tools`
 -- Indexes for table `urgency`
 --
 ALTER TABLE `urgency`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -450,17 +451,6 @@ ALTER TABLE `tools`
 --
 ALTER TABLE `urgency`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `tasks`
---
-ALTER TABLE `tasks`
-  ADD CONSTRAINT `tasks_ibfk_1` FOREIGN KEY (`urgency`) REFERENCES `urgency` (`id`),
-  ADD CONSTRAINT `tasks_ibfk_2` FOREIGN KEY (`tool`) REFERENCES `tools` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
