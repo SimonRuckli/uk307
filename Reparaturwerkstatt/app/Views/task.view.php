@@ -21,7 +21,7 @@
 
         <h4>Neuer Reparaturauftrag</h4>
 
-        <form action="processtask" method="post">
+        <form autocomplete="off" action="processtask" method="post">
 
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
@@ -53,7 +53,7 @@
             </div>
 
             <div class="form-actions">
-                <button class="btn btn-primary" type="submit" name="button" value="add">Reparaturauftrag hinzufügen</button>
+                <button class="btn btn-primary" type="submit" id="add" name="button" value="add">Reparaturauftrag hinzufügen</button>
                 <button class="btn btn-secondary" type="submit" name="button" value="tasklist">Auftragsliste öffnen</button>
             </div>
         </form>
