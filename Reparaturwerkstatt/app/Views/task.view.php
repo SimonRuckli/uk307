@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Reparaturwerkstatt</title>
-        <link rel="stylesheet" href="public/css/css.css">
+        <link rel="stylesheet" href="public/css/app.css">
     </head>
     <body>
         <form action="validation" method="post">
