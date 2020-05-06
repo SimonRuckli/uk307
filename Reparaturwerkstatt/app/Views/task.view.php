@@ -26,12 +26,12 @@
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
                 <select class="form-control" name="urgency" require>
-                    <option hidden disabled selected value> -- select an option -- </option>
-                    <option value="very_deep">sehr tief</option>
-                    <option value="deep">tief</option>
-                    <option value="normal">normal</option>
-                    <option value="high">hoch</option>
-                    <option value="very high">sehr hoch</option>
+                    <option hidden disabled selected value> -- Bitte auswählen -- </option>
+                    <option>sehr tief</option>
+                    <option>tief</option>
+                    <option>normal</option>
+                    <option>hoch</option>
+                    <option>sehr hoch</option>
                 </select><br>
                 <input class="form-control" type="text" name="urgencydays" readonly>
                 <br>
