@@ -10,35 +10,38 @@
 
 <body>
     <form action="tasklist" method="post">
-        <div class="wrapper">
+        <div class="table">
             <h4>Auftragsliste</h4>
-            <table style="width:100%">
+            <table>
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th>
-                    <th>Dringlichkeit</th>
                     <th>Werkzeug</th>
+                    <th>Erfasser</th>
+                    <th>Dringlichkeit</th>
+                    <th>Rückgabedatum</th>
+                    <th>In Time</th>
                     <th>Bearbeiten</th>
+                    <th>Schliessen</th>
                 </tr>
                 <?php foreach ($tasks as  $count => $task) : ?>
                     <tr>
-                        <td><?= $task["name"]    ?? "" ?></td>
-                        <td><?= $task["email"]   ?? "" ?></td>
-                        <td><?= $task["phone"]   ?? "" ?></td>
+                        <td><?= $task["tool"] ?? "" ?></td>
+                        <td><?= $task["name"] ?? "" ?></td>
                         <td><?= $task["urgency"] ?? "" ?></td>
-                        <td><?= $task["tool"]    ?? "" ?></td>
+                        <td><?= getReturnDate($task["entryDate"], $task["urgency"]) ?? "" ?></td>
+                        <td><?= getInTimeIcon($task["processing"], $task["entryDate"], $task["urgency"]) ?? "" ?></td>
                         <td><button type="submit" name="button" value="<?= $task["id"] ?>">⚙️</button></td>
+                        <td><input type="checkbox" value="<?= $task["id"] ?>"></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
 
             <div class="form-actions">
                 <br>
-                <button class="btn btn-primary" type="submit" name="button" value="cancel">Zurück</button>
+                <button class="btn btn-primary" type="submit" name="button" value="cancel">Neuen Auftrag erfassen</button>
+                <button class="btn btn-secondary" type="submit" name="button" value="close">Aufträge schliessen</button>
             </div>
-
         </div>
     </form>
 </body>
+
 </html>

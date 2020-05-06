@@ -10,7 +10,6 @@
 
 <body>
     <div class="wrapper">
-
         <?php if (isset($validation)) : ?>
             <ul class="text-monospace text-danger">
                 <?php foreach ($validation->getErrors() as $error) : ?>
@@ -21,34 +20,34 @@
 
         <h4>Neuer Reparaturauftrag</h4>
 
-        <form autocomplete="off" action="processtask" method="post">
+        <form autocomplete="off" action="addtask" method="post">
 
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name" value="<?php echo(post("name"));?>">
+                <input class="form-control" type="text" name="name" value="<?php echo (post("name")); ?>">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
-                <input class="form-control" type="text" name="email" value="<?php echo(post("email"));?>">
+                <input class="form-control" type="text" name="email" value="<?php echo (post("email")); ?>">
                 <br>
                 <label class="form-label" for="phone">Telefon</label>
-                <input class="form-control" type="text" name="phone" value="<?php echo(post("phone"));?>">
+                <input class="form-control" type="text" name="phone" value="<?php echo (post("phone")); ?>">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <select class="form-control" name="urgency" id="urgency"  require >
-                    <option hidden disabled selected value><?php echo(post("urgency", " -- Bitte auswählen -- "));?></option>
+                <select class="form-control" name="urgency" id="urgency" require>
+                    <option hidden disabled selected value><?php echo (post("urgency", " -- Bitte auswählen -- ")); ?></option>
                     <option>sehr tief</option>
                     <option>tief</option>
                     <option>normal</option>
                     <option>hoch</option>
                     <option>sehr hoch</option>
                 </select><br>
-                <input class="form-control" type="text" name="urgencydays" id="urgencydays" readonly>
+                <input class="form-control" type="text" name="returnDate" id="returnDate" readonly>
                 <br>
 
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <br>
                 <div class="autocomplete">
-                    <input class="form-control" id="tool" type="text" name="tool" value="<?php echo(post("tool"));?>">
+                    <input class="form-control" id="tool" type="text" name="tool" value="<?php echo (post("tool")); ?>">
                 </div>
             </div>
 
@@ -58,7 +57,6 @@
             </div>
         </form>
     </div>
-
     <script src="public/js/autocomplete.js"></script>
     <script type="text/javascript">
         var tools = <?php echo json_encode($tools); ?>;
@@ -68,4 +66,5 @@
     </script>
     <script src="public/js/addTask.js"></script>
 </body>
+
 </html>
