@@ -25,7 +25,16 @@
                 <input class="form-control" type="text" name="phone">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
-                <input class="form-control" type="text" name="urgency">
+                <!--<input class="form-control" type="text" name="urgency"><br>-->
+                <select class="form-control" name="urgency" value=default require>
+                <option disabled selected value> -- select an option -- </option>
+                    <option value="very_deep">sehr tief</option>
+                    <option value="deep">tief</option>
+                    <option value="normal">normal</option>
+                    <option value="high">hoch</option>
+                    <option value="very high">sehr hoch</option>
+                </select><br>
+                <input class="form-control" type="text" name="urgencydays" readonly>
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <input class="form-control" type="text" name="tool">
