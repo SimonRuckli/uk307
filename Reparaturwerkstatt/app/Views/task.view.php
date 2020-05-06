@@ -33,7 +33,7 @@
                     <option>hoch</option>
                     <option>sehr hoch</option>
                 </select><br>
-                <input class="form-control" type="text" name="urgencydays" readonly>
+                <input class="form-control" type="text" name="urgencydays" id="urgencydays" readonly>
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <input class="form-control" type="text" name="tool">
@@ -47,6 +47,9 @@
 
     </div>
 
+    <script type="text/javascript">
+        var tools = <?php echo json_encode($tools); ?>;
+    </script>
     <script src="public/js/app.js"></script>
 </body>
 
