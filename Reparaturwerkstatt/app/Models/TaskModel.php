@@ -80,13 +80,4 @@ class Task
 
         return $statement->execute();
     }
-
-    // Lösche Task
-    public function delete(int $id)
-    {
-        $statement = $this->db->prepare("DELETE FROM tasks WHERE id = :id");
-        $statement->bindParam(":id", $id, PDO::PARAM_INT);
-
-        return $statement->execute();
-    }
 }

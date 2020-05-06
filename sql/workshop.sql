@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 06, 2020 at 09:00 AM
+-- Generation Time: May 06, 2020 at 03:37 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `workshop`
 --
+CREATE DATABASE IF NOT EXISTS `workshop` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE `workshop`;
 
 -- --------------------------------------------------------
 
@@ -32,9 +34,27 @@ CREATE TABLE `tasks` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `phone` varchar(15) NOT NULL,
+  `daysUntilReturn` int(11) NOT NULL,
+  `processing` tinyint(1) NOT NULL DEFAULT 1,
   `urgency` int(11) NOT NULL,
   `tool` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tasks`
+--
+
+INSERT INTO `tasks` (`id`, `name`, `email`, `phone`, `daysUntilReturn`, `processing`, `urgency`, `tool`) VALUES
+(1, 'Max', 'max_pfaeffli@sluz.ch', '123123', 0, 0, 2, 5),
+(2, 'snowy', 'mailmail', '123345', 0, 0, 2, 9),
+(3, 'Simi', 'isgae@xd.de', '69420', 0, 0, 4, 22),
+(4, 'jöel', 'thatname@lmao.com', '1233454567', 0, 0, 1, 22),
+(5, 'Max', 'mail@mail.com', '123123', 15, 1, 3, 22),
+(6, '', 'asdf', '234', 10, 1, 4, 16),
+(7, 'max', 'mail@xd.de', '123456', 20, 1, 2, 32),
+(8, 'Max', 'mail@mail.com', '1234565', 15, 1, 3, 16),
+(9, 'Max', 'max_pfaeffli@sluz.ch', '123', 15, 1, 3, 30),
+(10, 'Max', 'max_pfaeffli@sluz.ch', '123345', 15, 1, 3, 30);
 
 -- --------------------------------------------------------
 
@@ -438,7 +458,7 @@ ALTER TABLE `urgency`
 -- AUTO_INCREMENT for table `tasks`
 --
 ALTER TABLE `tasks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `tools`
