@@ -77,3 +77,9 @@ function autocomplete(inp, arr) {
       closeAllLists(e.target);
   });
   }
+
+
+var btn = document.getElementById("add");
+btn.addEventListener("click", function () {
+    
+});
