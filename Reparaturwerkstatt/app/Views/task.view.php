@@ -41,7 +41,7 @@
                     <option>hoch</option>
                     <option>sehr hoch</option>
                 </select><br>
-                <input class="form-control" type="text" name="returnDate" id="returnDate" readonly>
+                <input class="form-control" type="text" name="returnDate" id="returnDate" value="<?php echo (post("returnDate")); ?>" readonly>
                 <br>
 
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
