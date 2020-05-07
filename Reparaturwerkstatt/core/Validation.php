@@ -28,11 +28,6 @@ class Validation
             {
                 array_push($this->errors,"Telefonnummer ist nicht gültig.\n");
             }
-            return $phone;
-        }
-        else
-        {
-            return "-";
         }
     }
     
