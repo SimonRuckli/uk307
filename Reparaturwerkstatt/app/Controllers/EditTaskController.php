@@ -38,9 +38,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             header("Location: tasklist");
         } else {
-            //$task = $dto->getEntryById((int)post("button"));
-            header("Location: edit?id=" . post("button"));
-           // require "app/Views/edit.view.php";
+            require "app/Views/edit.view.php";
         }
     }
 }

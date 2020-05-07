@@ -24,13 +24,13 @@
 
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name" value="<?php echo (post("name")); ?>">
+                <input class="form-control" type="text" name="name" value="<?php echo htmlspecialchars(post("name")); ?>">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
-                <input class="form-control" type="text" name="email" value="<?php echo (post("email")); ?>">
+                <input class="form-control" type="text" name="email" value="<?php echo htmlspecialchars(post("email")); ?>">
                 <br>
                 <label class="form-label" for="phone">Telefon</label>
-                <input class="form-control" type="text" name="phone" value="<?php echo (post("phone")); ?>">
+                <input class="form-control" type="text" name="phone" value="<?php echo htmlspecialchars(post("phone")); ?>">
                 <br>
                 <label class="form-label" for="urgency">Dringlichkeit*</label>
                 <select class="form-control" name="urgency" id="urgency" require>
@@ -47,7 +47,7 @@
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <br>
                 <div class="autocomplete">
-                    <input class="form-control" id="tool" type="text" name="tool" value="<?php echo (post("tool")); ?>">
+                    <input class="form-control" id="tool" type="text" name="tool" value="<?php echo htmlspecialchars(post("tool")); ?>">
                 </div>
             </div>
 
