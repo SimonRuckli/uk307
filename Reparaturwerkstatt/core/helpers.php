@@ -53,11 +53,7 @@ function getInTimeIcon($status, $entryDate, $urgency): string
     
     if (getReturnDate($entryDate, $urgency) < $today && $status == "1") {
         return "👎";
-    } else if (getReturnDate($entryDate, $urgency) < $today && $status == "0") {
-        return "👍";
     } else if (getReturnDate($entryDate, $urgency) > $today && $status == "1") {
-        return "👍";
-    } else if (getReturnDate($entryDate, $urgency) > $today && $status == "0") {
         return "👍";
     }
 }

@@ -34,5 +34,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     } elseif ($_POST["button"]  == "tasklist") {
         header("Location: tasklist");
     }
+} else {
+    require "app/Views/task.view.php";
 }
-require "app/Views/task.view.php";

@@ -22,7 +22,7 @@
                     <th>Bearbeiten</th>
                     <th>Schliessen</th>
                 </tr>
-                <?php foreach ($tasks as  $count => $task) : ?>
+                <?php foreach ($tasks as $task) : ?>
                     <tr>
                         <td><?= $task["tool"] ?? "" ?></td>
                         <td><?= $task["name"] ?? "" ?></td>
@@ -30,7 +30,7 @@
                         <td><?= getReturnDate($task["entryDate"], $task["urgency"]) ?? "" ?></td>
                         <td><?= getInTimeIcon($task["processing"], $task["entryDate"], $task["urgency"]) ?? "" ?></td>
                         <td><button type="submit" name="button" value="<?= $task["id"] ?>">⚙️</button></td>
-                        <td><input type="checkbox" value="<?= $task["id"] ?>"></td>
+                        <td><input type="checkbox" name="check<?= $task["id"] ?>" value="check<?= $task["id"] ?>"></td>
                     </tr>
                 <?php endforeach; ?>
             </table>
