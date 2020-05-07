@@ -22,9 +22,17 @@ class Validation
 
     public function validatePhone($phone)
     {
-        if(!preg_match("/^[0-9 + .\-]+$/i", trim($phone)))
+        if($phone != "")
         {
-            array_push($this->errors,"Telefonnummer ist nicht gültig.\n");
+            if(!preg_match("/^[0-9 + .\-]+$/i", trim($phone)))
+            {
+                array_push($this->errors,"Telefonnummer ist nicht gültig.\n");
+            }
+            return $phone;
+        }
+        else
+        {
+            return "-";
         }
     }
     
