@@ -9,7 +9,7 @@ comboBox.addEventListener("change", function () {
             printBox.value = "Voraussichtliches Rückgabedatum: " + addDays(today, 25);
             break;
         case "tief":
-            printBox.value = "Voraussichtliches Rückgabedatum: " + addDays(today, 10);
+            printBox.value = "Voraussichtliches Rückgabedatum: " + addDays(today, 20);
             break;
         case "normal":
             printBox.value = "Voraussichtliches Rückgabedatum: " + addDays(today, 15);
