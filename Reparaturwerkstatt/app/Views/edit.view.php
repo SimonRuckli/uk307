@@ -10,6 +10,7 @@
 
 <body>
     <div class="wrapper">
+    <script src="public/js/errorMessage.js"></script>
         <?php if (isset($validation)) : ?>
             <ul class="text-monospace text-danger">
                 <?php foreach ($validation->getErrors() as $error) : ?>
@@ -23,7 +24,7 @@
         <form autocomplete="off" action="edit" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name" value="<?= $task["name"] ?? post("name") ?>">
+                <input class="form-control" type="text" name="name" id="name" value="<?= $task["name"] ?? post("name") ?>">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
                 <input class="form-control" type="text" name="email" value="<?= $task["email"] ?? post("email") ?>">
