@@ -34,11 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             );
 
             $task = new Task($dto);
-            $task->updateEntry((int)post("button"));
+            $task->updateEntry((int) post("button"));
 
             header("Location: tasklist");
         } else {
-            require "app/Views/edit.view.php";
+            //$task = $dto->getEntryById((int)post("button"));
+            header("Location: edit?id=" . post("button"));
+           // require "app/Views/edit.view.php";
         }
     }
 }

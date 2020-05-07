@@ -1,8 +1,8 @@
 body {
   margin: 0 auto;
   background-repeat: no-repeat;
-  background-image: url("../../public/background.jpg");
-}
+  background-image: url("../../public/background.jpeg");
+  background-position: center;}
 
 h4 {
   margin-bottom: 20px;
