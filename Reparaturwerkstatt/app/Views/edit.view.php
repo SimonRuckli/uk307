@@ -24,13 +24,13 @@
         <form autocomplete="off" action="edit" method="post">
             <div class="form-group">
                 <label class="form-label" for="name">Name*</label>
-                <input class="form-control" type="text" name="name" id="name" value="<?= $task["name"] ?? post("name") ?>">
+                <input class="form-control" type="text" name="name" value="<?= htmlspecialchars($task["name"] ?? post("name")) ?>">
                 <br>
                 <label class="form-label" for="email">E-Mail*</label>
-                <input class="form-control" type="text" name="email" value="<?= $task["email"] ?? post("email") ?>">
+                <input class="form-control" type="text" name="email" value="<?= htmlspecialchars($task["email"] ?? post("email")) ?>">
                 <br>
                 <label class="form-label" for="phone">Telefon</label>
-                <input class="form-control" type="text" name="phone" value="<?= $task["phone"] ?? post("phone") ?>">
+                <input class="form-control" type="text" name="phone" value="<?= htmlspecialchars($task["phone"] ?? post("phone")) ?>">
                 <br>
                 <label class="form-label" for="processing">Status der Reparatur</label>
                 <select class="form-control" name="processing" id="processing" require>
@@ -41,11 +41,12 @@
                 <br>
                 <label class="form-label" for="tool">Betreffendes Werkzeug*</label>
                 <div class="autocomplete">
-                    <input class="form-control" id="tool" type="text" name="tool" value="<?= $task["tool"] ?? post("tool") ?>">
+                    <input class="form-control" id="tool" type="text" name="tool" value="<?= htmlspecialchars($task["tool"] ?? post("tool")) ?>">
                 </div>
                 <br>
-                <input class="form-control" type="text" name="returnDate" id="returnDate" 
-                value="Voraussichtliches Rückgabedatum: <?= getReturnDate($task["entryDate"], $task["urgency"]) ?>" readonly>
+                <input class="form-control" type="text" name="urgency" id="urgency" value="Dringlichkeit: <?= $task["urgency"] ?>" readonly>
+                <br>
+                <input class="form-control" type="text" name="returnDate" id="returnDate" value="Voraussichtliches Rückgabedatum: <?= getReturnDate($task["entryDate"], $task["urgency"]) ?>" readonly>
             </div>
 
             <div class="form-actions">
